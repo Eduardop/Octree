@@ -8,6 +8,7 @@ Contained entirely in a header file.
 Usage:
 ------
 
+```c++
     // Create class that holds your data.
     class Node
     {
@@ -44,6 +45,7 @@ Usage:
     };
     Callback cb;
     octree.traverse(cb);
+```
 
 See sample.cpp for a more extensive sample.
 
