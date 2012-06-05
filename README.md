@@ -9,7 +9,7 @@ Usage:
 ------
 
 ```c++
-    // Create class that holds your data.
+    // Class that holds your data.
     class Node
     {
         ...
@@ -17,29 +17,33 @@ Usage:
 
     // Initialize octree.
     // cellSize is the minimum subdivided cell size.
+    float min[3] = {0.0f, 0.0f, 0.0f};
+    float max[3] = {1.0f + EPSILON, 1.0f + EPSILON, 1.0f + EPSILON};
+    float cellSize[3] = {0.1, 0.1, 0.1};
     Octree<Node> octree(min, max, cellSize);
 
     // Add data to the octree.
     // Data will be added to the leaves.
-    for (int i = 0; i < SIZE; i++)
+    for (int i = 0; i < NUM_ELEMENTS; i++)
     {
-        // getCell returns the octree cell (of size
-        // at most cellSize) that contains the passed
+        // getCell returns the octree leaf cell (of size
+        // cellSize or larger) that contains the passed
         // position.
         Node& n = octree.getCell(position[i]);
-        // Set your data in the cell
-        // e.g. add something to a std::vector, etc
+        // Set your data in the cell.
+        // e.g. add something to a std::vector, etc.
         n. ... = ...;
     }
     
-    // Traverse octree
-    // Create callback class
+    // Traverse octree.
+    // Create callback class.
     class Callback: public Octree<Node>::Callback
     {
     public:
         // State variables.
         ...
-        // Callback functor. Return value: true = continue; false = abort.
+        // Callback functor. 
+        // Returns: true = continue and traverse subcells; false = abort branch.
         virtual bool operator()(const float min[3], const float max[3], N& nodeData)
         {
             ...
