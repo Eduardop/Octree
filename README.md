@@ -44,11 +44,12 @@ Usage:
         ...
         // Callback functor. 
         // Returns: true = continue and traverse subcells; false = abort branch.
-        virtual bool operator()(const float min[3], const float max[3], N& nodeData)
+        virtual bool operator()(const float min[3], const float max[3], Node& nodeData)
         {
             ...
         }
     };
+    // Invoke traversal.
     Callback cb;
     octree.traverse(&cb);
 ```
