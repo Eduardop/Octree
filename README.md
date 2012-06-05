@@ -46,7 +46,7 @@ Usage:
         }
     };
     Callback cb;
-    octree.traverse(cb);
+    octree.traverse(&cb);
 ```
 
 See sample.cpp for a more extensive sample.
