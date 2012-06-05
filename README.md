@@ -1,4 +1,4 @@
 Octree
 ======
 
-Octree library in C++
+Octree library in C++.

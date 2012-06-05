@@ -2,11 +2,10 @@
 //  Octree.h
 //
 //  Created by Eduardo Poyart on 6/4/12.
-//  Copyright (c) 2012 Eduardo Poyart. All rights reserved.
 //
 
 /*
-Copyright 2012, Eduardo Poyart.
+Copyright (c) 2012, Eduardo Poyart.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -35,6 +34,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #ifndef Octree_h
 #define Octree_h
+
+#include <assert.h>
 
 #define COMPUTE_SIDE(i, bit, p, mid, newMin, newMax) \
 if (p >= mid)         \
@@ -99,7 +100,7 @@ public:
     class Callback
     {
     public:
-        // Return value: true = continue; false = abort
+        // Return value: true = continue; false = abort.
         virtual bool operator()(const float min[3], const float max[3], N& nodeData) = 0;
     };
     
