@@ -36,7 +36,9 @@ Usage:
     // Create callback class
     class Callback: public Octree<Node>::Callback
     {
-        ... // state
+    public:
+        // State variables.
+        ...
         // Callback functor. Return value: true = continue; false = abort.
         virtual bool operator()(const float min[3], const float max[3], N& nodeData)
         {
