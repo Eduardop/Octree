@@ -39,6 +39,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <vector>
 #include <iomanip>
 #include <math.h>
+#include <stdlib.h>
 using namespace std;
 
 // Any 3D vector implementation can be used, as long as it can be converted
